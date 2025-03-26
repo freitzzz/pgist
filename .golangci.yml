@@ -94,7 +94,6 @@ linters:
     - govet
     - ineffassign
     - staticcheck
-    - tagliatelle
     - typecheck
     - unused
     - decorder
