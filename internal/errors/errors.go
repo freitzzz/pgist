@@ -15,3 +15,8 @@ var ErrGithHubListGistsParse = errors.New("failed to parse github gists json")
 
 // Use this function to swallow errors that don't need to be taken care of.
 func Swallow(err error) { /* noop */ }
+
+// Proxies [errors] Is call.
+func Is(err error, target error) bool {
+	return errors.Is(err, target)
+}

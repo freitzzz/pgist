@@ -8,13 +8,6 @@ import (
 	"github.com/freitzzz/pgist/pkg/github"
 )
 
-// Creates an action for listing gists.
-func List(username string) listAction {
-	return listAction{
-		Username: username,
-	}
-}
-
 type listAction struct {
 	Username string
 }
@@ -35,7 +28,7 @@ func (c listAction) Execute() {
 
 	gs, err := github.ListGists(*u, pat)
 
-	if err == errors.ErrGitHubUserLookup || len(gs) == 0 {
+	if errors.Is(err, errors.ErrGitHubUserLookup) || len(gs) == 0 {
 		fmt.Printf("No gist data found for user '%s'\n", c.Username)
 		return
 	}

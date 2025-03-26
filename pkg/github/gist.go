@@ -5,9 +5,9 @@ import "encoding/json"
 type Gist struct {
 	Id          string    `json:"id"`
 	Url         string    `json:"html_url"`
-	Public      bool      `json:"public"`
 	Description string    `json:"description"`
 	Files       gistFiles `json:"files"`
+	Public      bool      `json:"public"`
 }
 
 type gistFile struct {

@@ -1,8 +1,8 @@
 package flags
 
 type flags struct {
-	ListGists bool
 	Username  string
+	ListGists bool
 }
 
 func (f flags) valid() bool {
